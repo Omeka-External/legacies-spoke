@@ -18,66 +18,6 @@ $customMetadata = [
 ]
 ?>
 
-<!-- Metadata for a collecting project. -->
-<?php if($item->resourceClass() && $item->resourceClass()->id() == 133): ?>
-
-    <div class="grid-x grid-padding-x">
-        <div class="resource-title cell medium-12">
-            <?php echo $this->pageTitle($item->displayTitle(), 2); ?>
-        </div>
-        <?php if (count($itemMedia) > 0): ?>
-        <div class="cell medium-3">
-            <?php foreach ($itemMedia as $media): ?>
-                <?php echo $media->render(); ?>
-            <?php endforeach; ?>
-        </div>
-        <?php endif; ?>
-        <div class="cell medium-9">
-            <?php if(($description = $item->displayDescription()) && ($description !== '')): ?>
-                <p><?php echo $description; ?></p>
-            <?php endif; ?>
-
-            <?php if($institutions = $item->value('mare:originatingInstitution',['all' => true])): ?>
-                <?php foreach($institutions as $institution): ?>
-                    <?php if ($institutionResource = $institution->valueResource()): ?>
-                    <p class="institution"><?php echo $institutionResource->linkPretty('medium'); ?></p>
-                    <?php else: ?>
-                    <p class="institution"><?php echo $institution->asHtml(); ?></p>
-                    <?php endif; ?>
-                <?php endforeach; ?>
-            <?php endif; ?>
-
-            <?php if( $item->value('mare:collectingUrl')): ?>
-                <?php echo $this->hyperlink('Contribute to This Project', $item->value('mare:collectingUrl')->uri(),[
-                  'class' => 'o-icon-external button',
-                  'aria-label' => 'External',
-                ]); ?>
-            <?php endif; ?>
-
-            <?php if ($item->value('mare:collectionUrl')): ?>
-                <?php echo $this->hyperlink('Project Website', $item->value('mare:collectionUrl')->uri(), [ 
-                      'class' => 'o-icon-external button',
-                      'aria-label' => 'External',
-                ]); ?>
-            <?php endif; ?>
-
-            <?php foreach ($customMetadata as $key => $values): ?>
-            <?php if ((count($values) > 0)): ?>
-            <div class="property">
-                <h4><?php echo $key; ?></h4>
-                <div class="values">
-                <?php foreach($values as $value): ?>
-                    <div class="value"><?php echo $value; ?></div>
-                <?php endforeach; ?>
-                </div>
-            </div>
-            <?php endif; ?>
-            <?php endforeach; ?>
-        </div>
-    </div>
-    
-
-<?php else: ?>
 <!-- Metadata for everything else. -->
 <div class="grid-x grid-padding-x">
 
@@ -92,14 +32,20 @@ $customMetadata = [
     </div>
 
     <div class="cell medium-9">
-        <?php $itemSets = $item->itemSets(); ?>
-            <?php foreach($itemSets as $itemSet): ?>
-            <?php if($itemSet->resourceClass() && $itemSet->resourceClass()->id() == 133): ?>
-                 <p>This item originates from <a href="<?php echo $itemSet->value('mare:collectionUrl'); ?>"><?php echo $itemSet->value('dcterms:title'); ?></a></p>
-            <?php endif; ?>
-            <?php endforeach; ?>
         <?php $this->trigger('view.show.before'); ?>
         <?php echo $item->displayValues(); ?>
+
+        <?php $itemSets = $item->itemSets(); ?>
+        <?php if (count($itemSets) > 0): ?>
+            <div class="property">
+            <h4>Item Sets</h4>
+            <div class="values">
+            <?php foreach ($itemSets as $itemSet): ?>
+            <a href="<?php echo $escape($itemSet->url()); ?>"><?php echo $itemSet->displayTitle(); ?></a>
+            <?php endforeach; ?>
+            </div>
+            </div>
+        <?php endif; ?>
 
         <?php
         $page = $this->params()->fromQuery('page', 1);
@@ -116,8 +62,6 @@ $customMetadata = [
         <?php $this->trigger('view.show.after'); ?>
     </div>
 </div>
- <?php endif; ?>
-
 
 
 
