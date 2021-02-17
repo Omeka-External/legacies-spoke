@@ -35,6 +35,47 @@ endif;
         <?php echo $this->headLink(); ?>
         <?php echo $this->headStyle(); ?>
         <?php echo $this->headScript(); ?>
+
+        <style>
+           <?php
+            ($linkColor = $this->themeSetting('link_color')) || ($linkColor = "#2436a1");
+            ($visitedLinkColor = $this->themeSetting('visited_link_color')) || ($visitedLinkColor = "#2436a1");
+            ($activeLinkColor = $this->themeSetting('active_link_color')) || ($activeLinkColor = "#c9cff5");
+            ($activeLinkTextColor = $this->themeSetting('active_link_text_color')) || ($activeLinkTextColor = "#2436a1");
+            ($buttonColor = $this->themeSetting('button_bg_color')) || ($buttonColor = "#2436a1");
+            ($buttonTextColor = $this->themeSetting('button_text_color')) || ($buttonTextColor = "#fefefe");
+            ($buttonHoverTextColor = $this->themeSetting('button_hover_text_color')) || ($buttonHoverTextColor = "#2436a1");
+            ($buttonHoverBackgroundColor = $this->themeSetting('button_hover_background_color')) || ($buttonHoverBackgroundColor = "#2436a1");
+
+            ?>
+                
+                a:link {
+                    color: <?php echo $linkColor; ?>;
+                }
+                a:visited {
+                    color: <?php echo $visitedLinkColor; ?>;
+                }
+                a:hover, a:active, a:focus {
+                    color: <?php echo $activeLinkTextColor; ?>;
+                    background-color: <?php echo $activeLinkColor; ?>;
+                }
+                
+        
+                .button, button, .button[disabled],.button[disabled]:hover,
+                input[type="reset"],
+                input[type="submit"],
+                input[type="button"] {
+                  background-color: <?php echo $buttonColor; ?>;
+                  color: <?php echo $buttonTextColor; ?> !important;
+                }
+                .button:hover, button:hover,
+                input[type="reset"]:hover,
+                input[type="submit"]:hover,
+                input[type="button"]:hover {
+                  background-color: <?php echo $buttonHoverBackgroundColor; ?>;
+                  color: <?php echo $buttonHoverTextColor; ?> !important;
+                }                   
+        </style>
     </head>
 
     <?php echo $this->htmlElement('body'); ?>
