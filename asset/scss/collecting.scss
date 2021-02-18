@@ -1,12 +1,12 @@
 @charset 'utf-8';
 
 @import 'globals-default';
-@import 'globals-collecting';
 @import 'settings';
+@import 'globals-collecting';
 
 // Collecting Together Settings
 
-$header-font-family: 'Bagnard', sans-serif;
+$header-font-family: 'Allerta', sans-serif;
 
 $topbar-background: #fff;
 $button-background-hover: $secondary-color;
@@ -22,6 +22,7 @@ button,
 
   &:hover {
     color: $primary-color;
+    background-color: $secondary-color;
   }
   
   &:before {
@@ -57,15 +58,14 @@ body {
   
   &:before {
     content: "";
-    background: url('../img/trianglepattern.jpg');
-    background-size: 70px;
+    background: #f2f2f2;
+    background-size: 100px;
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     z-index: -1;
-    opacity: .4;
   }
 }
 
