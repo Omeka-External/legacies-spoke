@@ -137,6 +137,7 @@ a.site-title {
 @include breakpoint(small) {
   #blocks {
     margin: 0;
+    @include xy-cell(100%);
   }
 }
 
