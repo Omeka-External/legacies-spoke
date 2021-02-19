@@ -179,7 +179,7 @@ footer {
 
 .logos {
   @include xy-grid();
-  height: 6 * $global-padding;
+  max-height: 6 * $global-padding;
   justify-content: center;
   margin-bottom: $global-margin;
 }
