@@ -145,81 +145,8 @@ a.site-title {
   font-family: $header-font-family;
 }
 
-.find-a-collecting-project #blocks {
-  width: 100%;
-}
-
-.find-a-collecting-project #blocks > p {
-  max-width: 75%;
-}
-
-#collecting-together-form {
-  width: 30%;
-  float: left;
-  margin-top: $global-margin;
-  padding-right: $global-padding;
-  position: sticky;
-  top: $global-margin;
-}
-
-#collecting-together-form label {
-  font-size: 1.125 * $global-font-size;
-}
-
-#collecting-together-form select {
-  max-width: 100%;
-}
-
-#collecting-together-projects {
-  width: 70%;
-  float: right;
-  padding: 0 $global-padding;
-  margin-top: $global-margin;
-}
-
-.results-copy {
-  font-size: 1.25 * $global-font-size;
-  background-color: $secondary-color;
-  padding: (.25 * $global-padding) $global-padding;
-  border-radius: 2px;
-  display: inline-block;
-  margin-bottom: $global-margin;
-}
-
-#collecting-together-projects .project {
-  margin-bottom: 2 * $global-margin;
-  overflow: hidden;
-}
-
-#collecting-together-projects .title {
-  font-size: 1.5 * $global-font-size;
+#blocks form label {
   font-weight: bold;
-  margin-bottom: 0;
-}
-
-#collecting-together-projects .institution, 
-#collecting-together-projects .description {
-  margin-bottom: 0;
-}
-
-#collecting-together-projects .project-meta {
-  width: 75%;
-}
-
-#collecting-together-projects .logo {
-  float: right;
-  width: 25%;
-  text-align: center;
-}
-
-#collecting-together-projects .logo img {
-  max-height: 6 * $global-padding;
-  width: auto;
-}
-
-#collecting-together-projects .links a:before {
-  display: inline-block;
-  margin-right: .25 * $global-margin;
 }
 
 .resource.show .institution {
@@ -243,4 +170,66 @@ a.site-title {
   height: 3 * $global-padding;
   width: auto;
   margin-right: .5 * $global-margin;
+}
+
+footer {
+  background-color: #fff;
+  @include xy-grid-container();
+}
+
+.logos {
+  @include xy-grid();
+  height: 6 * $global-padding;
+  justify-content: center;
+  margin-bottom: $global-margin;
+}
+
+.logos .logo {
+  text-align: center;
+  @include xy-cell-size(4/12);
+  height: 100%;
+}
+
+@include breakpoint(medium down) {
+  .logos {
+    height: auto;
+  }
+  
+  .logos .logo {
+    @include xy-cell-size(100%);
+    height: 6 * $global-padding; 
+  }
+}
+
+.logos .logo img {
+  max-width: none;
+  width: auto;
+  max-height: 100%;
+}
+
+.collecting-these-times-footer {
+  @include xy-grid();
+  margin: (2 * $global-margin) 0;
+  align-items: flex-start;
+}
+
+.footer-links {
+  @include xy-cell-size(7/12);
+  margin-bottom: $global-margin;
+}
+
+footer .rrchnm-logo {
+  margin-left: auto;
+  display: block;
+  text-align: right;
+  
+  img {
+    max-height: 3 * $global-padding;
+  }
+}
+
+@include breakpoint(medium down) {
+  footer .rrchnm-logo {
+    margin-left: 0;    
+  }
 }
