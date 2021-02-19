@@ -20,7 +20,8 @@ button,
 [type="submit"] {
   font-family: $header-font-family;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: $primary-color;
     background-color: $secondary-color;
   }
@@ -72,6 +73,10 @@ body {
 header {
   border-bottom: 3px solid $primary-color;
   margin-bottom: 4 * $global-margin;
+  
+  @include breakpoint(medium down) {
+    margin-bottom: $global-margin;
+  }
 }
 
 a.site-title {
@@ -92,8 +97,47 @@ a.site-title {
   margin-bottom: 0;
 }
 
+.top-bar-left .contribute.button {
+  @include show-for(large);
+}
+
+.grid-container > .site-title {
+  @include show-for(large);
+}
+
+#responsive-menu .contribute.button {
+  @include hide-for(large);
+}
+
+.top-bar-left a.site-title {
+  @include hide-for(large);
+  margin-bottom: 0;
+}
+
+.top-bar-left a.site-title h1 {
+  font-size: 1.25 * $global-font-size;
+}
+
 #content {
   background-color: #fff;
+}
+
+@include breakpoint(medium down) {
+  body:not(.browse) #content,
+  #content {
+    margin: 2 * $global-margin;
+    padding: $global-padding;
+  }
+
+  .title-bar {
+    display: inline-flex;
+  }
+} 
+
+@include breakpoint(small) {
+  #blocks {
+    margin: 0;
+  }
 }
 
 .toc-block {
