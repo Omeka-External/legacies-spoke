@@ -47,6 +47,10 @@ a {
   }
 }
 
+.logos a:hover {
+  background-color: inherit;
+}
+
 .menu .active > a {
   background-color: transparent;
   text-decoration: underline;
