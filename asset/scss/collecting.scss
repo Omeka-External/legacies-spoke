@@ -175,6 +175,11 @@ a.site-title {
   display: inline-flex;
 }
 
+.resource.show .media-render > a:only-child {
+  line-height: 1;
+  word-wrap: break-word;
+}
+
 .item.show .institution img {
   height: 3 * $global-padding;
   width: auto;
@@ -182,7 +187,6 @@ a.site-title {
 }
 
 footer {
-  background-color: #fff;
   @include xy-grid-container();
 }
 
@@ -193,7 +197,7 @@ footer {
 
 .logos .logo {
   text-align: center;
-  @include xy-cell-size(4/12);
+  @include xy-cell-size(3/12);
   max-height: 6 * $global-padding;
 }
 
@@ -208,7 +212,7 @@ footer {
 }
 
 .logos .logo img {
-  max-width: none;
+  max-width: 100%;
   width: auto;
   max-height: 100%;
 }
