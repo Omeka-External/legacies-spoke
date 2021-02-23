@@ -247,7 +247,7 @@ footer .rrchnm-logo {
 }
 
 .home #blocks h2 {
-  font-size: 1.5 & $global-font-size;
+  font-size: 1.375 & $global-font-size;
 }
 
 .callout {
@@ -277,4 +277,5 @@ footer .rrchnm-logo {
 
 .home .item-showcase {
   margin: (2 * $global-margin) (-1 * $global-margin);
+  align-items: center;
 }
