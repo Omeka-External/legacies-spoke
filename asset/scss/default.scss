@@ -2,5 +2,87 @@
 
 @import 'globals-default';
 @import 'settings';
+
+// Legacies overrides
+
+$box-shadow-setting: 2px 2px 3px 0 rgba(0,0,0,.54);
+$button-font-family: $header-font-family;
+$button-color: $secondary-color;
+$header-font-weight: 700;
+$paragraph-lineheight: 1.75; 
+$topbar-background: #000;
+
 @import 'foundation-core';
 @import 'omeka';
+
+
+
+// Global
+// ======
+
+body {
+    background: #fdf8ed;
+}
+
+body:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .1;
+    background: url(../img/sewanee-bg.jpg) center/cover no-repeat;
+    z-index: -1;
+}
+
+
+// Inputs
+// ======
+
+[type="submit"],
+[type="button"],
+button,
+.button {
+    box-shadow: $box-shadow-setting;
+    font-family: $header-font-family;
+    font-weight: 700;
+}
+
+// Header
+// ======
+
+header {
+    border-bottom: 5px solid $primary-color;
+}
+
+header a {
+    color: $secondary-color !important;
+    font-weight: 700;
+
+    &:hover,
+    &:active {
+        text-decoration: underline;
+    }
+}
+
+// Navigation
+// ==========
+
+.sub-menu .vertical.menu {
+    background-color: $secondary-color;
+    box-shadow: $box-shadow-setting;
+    padding: $global-padding;
+}
+
+// Content
+// =======
+
+#content a {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+#content a.button {
+    text-decoration: none;
+}
