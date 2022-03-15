@@ -33,12 +33,12 @@ if ($galleryDisplay) {
 }
 ?>
 
-<div class="resource-title">
+<div class="resource-title medium-12 cell">
 <?php echo $this->pageTitle($item->displayTitle(), 2); ?>
 <h3 class="label"><?php echo $translate('Item'); ?></h3>
 </div>
 
-<div class="grid-x">
+<div class="medium-9 cell">
 <?php if ($galleryDisplay): ?>
     <?php if (count($lightMedia) > 0): ?>
     <div id="itemfiles" class="<?php echo $mediaDisplay; ?>">
@@ -149,7 +149,12 @@ if ($galleryDisplay) {
             </div>
         </dl>
     <?php endif; ?>
-            
+        
+        <?php $this->trigger('view.show.after'); ?>
+    </div>
+    
+</div>
+<div class="medium-3 cell">
     <?php
         $page = $this->params()->fromQuery('page', 1);
         $property = $this->params()->fromQuery('property');
@@ -157,12 +162,8 @@ if ($galleryDisplay) {
     ?>
     <?php if ($subjectValues): ?>
         <div id="item-linked">
-            <h3><?php echo $translate('Linked resources'); ?></h3>
+            <h3>Related Items</h3>
             <?php echo $subjectValues; ?>
         </div>
-        <?php endif; ?>
-        
-        <?php $this->trigger('view.show.after'); ?>
-    </div>
-    
+        <?php endif; ?>    
 </div>

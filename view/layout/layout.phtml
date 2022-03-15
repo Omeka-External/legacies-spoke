@@ -5,11 +5,7 @@ $this->htmlElement('html')->setAttribute('lang', $this->lang());
 $this->headMeta()->setCharset('utf-8');
 $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1');
 $this->headTitle($this->setting('installation_title', 'Omeka S'))->setSeparator(' · ');
-if (isset($stylesheet)) {
-    $this->headLink()->prependStylesheet($this->assetUrl("css/$stylesheet.css"));    
-} else {
-    $this->headLink()->prependStylesheet($this->assetUrl('css/default.css'));
-}
+$this->headLink()->prependStylesheet($this->assetUrl('css/default.css'));
 $this->headLink()->prependStylesheet($this->assetUrl('css/iconfonts.css', 'Omeka'));
 $this->headScript()->prependFile($this->assetUrl('vendor/foundation/foundation.min.js'));
 $this->headScript()->prependFile($this->assetUrl('js/global.js', 'Omeka'));
@@ -18,8 +14,6 @@ $this->trigger('view.layout');
 $title = $this->pageTitle($site->title());
 $userBar = $this->userBar();
 
-$navLayout = ($this->themeSetting('nav_layout')) ? $this->themeSetting('nav_layout') : 'dropdown';
-$this->htmlElement('body')->appendAttribute('class', $navLayout . '-menu');
 if ($userBar) {
   $this->htmlElement('body')->appendAttribute('class', 'user-bar');
 }
@@ -69,18 +63,14 @@ endif;
             <a id="skipnav" href="#content"><?php echo $this->translate('Skip to main content'); ?></a>
             <?php echo $userBar; ?>
             <header>
-                <?php if ($navLayout == 'vertical'): ?>
-                <?php echo $this->partial('common/header-vertical'); ?>
-                <?php else: ?>
                 <?php echo $this->partial('common/header-dropdown'); ?>
-                <?php endif; ?>
                 <?php if ($banner): ?>
                 <div class="banner <?php echo $bannerWidth; ?>">
                     <img src="<?php echo $this->themeSettingAssetUrl('banner'); ?>" title="Banner">
                 </div>
                 <?php endif; ?>
             </header>
-            <div id="content" role="main">
+            <div id="content" role="main" class="grid-x grid-padding-x">
                 <?php echo $this->content; ?>
             </div>
             <footer>
