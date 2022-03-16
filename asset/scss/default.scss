@@ -86,3 +86,39 @@ header a {
 #content a.button {
     text-decoration: none;
 }
+
+.full-width .asset {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    max-width: none;
+    max-height: 20em;
+    overflow-y: hidden;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-bottom: $global-margin;
+}
+
+.full-width .asset img {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    max-width: none;
+}
+
+.full-width:first-child > .asset {
+    margin-top: -2 * $global-margin;
+}
+
+// Modules
+
+.faceted-browse-page #container {
+    width: 100%;
+}
