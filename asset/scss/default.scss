@@ -162,4 +162,9 @@ header a {
 .faceted-browse-page .resource-list a img {
     float: right;
     margin-left: $global-margin;
+    max-width: 10 * $global-padding;
+}
+
+.faceted-browse-page .resource-link ~ * {
+    width: calc(100% - #{10 * $global-padding});
 }
