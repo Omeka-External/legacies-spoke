@@ -54,10 +54,13 @@ button,
 
 header {
     border-bottom: 5px solid $primary-color;
+    box-shadow: $box-shadow-setting;
+    position: relative;
+    z-index: 1000;
 }
 
 header a {
-    color: $secondary-color !important;
+    color: #fff !important;
     font-weight: 700;
 
     &:hover,
