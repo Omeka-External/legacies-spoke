@@ -116,9 +116,14 @@ header a {
         align-content: center;
     }
 
-    #linked-resources img {
+    #linked-resources img,
+    .resource-link img {
         max-width: 3.5rem;
         height: auto;
+    }
+
+    .resource-link .resource-name {
+        max-width: calc(100% - #{4.5 * $global-padding});
     }
 
     // Blocks
