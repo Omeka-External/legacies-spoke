@@ -120,8 +120,20 @@ header a {
     margin-top: -2 * $global-margin;
 }
 
+
 // Modules
 
 .faceted-browse-page #container {
     width: 100%;
+}
+
+.facted-browse-page .resource-list .resource {
+    clear: both;
+    margin-bottom: 2 * $global-margin;
+    overflow: hidden;
+}
+
+.faceted-browse-page .resource-list a img {
+    float: right;
+    margin-left: $global-margin;
 }
