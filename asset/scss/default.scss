@@ -97,6 +97,14 @@ header a {
         width: 100%;
     }
 
+    .resource.show .property {
+        margin-bottom: 2 * $global-margin;
+    }
+
+    .resource.show .value .language {
+        background-color: $secondary-color;
+    }
+
     .resource.show .media-list:first-child {
         width: 100%;
         margin-left: 0;
@@ -170,6 +178,10 @@ header a {
     width: calc(100% - #{10 * $global-padding});
 }
 
+.faceted-browse-page .browse-controls {
+    margin: 0;
+}
+
 .faceted-browse-page .browse-controls .button,
 .faceted-browse-page .browse-controls button {
     line-height: inherit;
@@ -183,8 +195,6 @@ header a {
 .faceted-browse-page .browse-controls select {
     box-shadow: $box-shadow-setting;
 }
-
 .faceted-browse-page .omeka-pagination {
-    margin: 0;
     width: auto;
 }
