@@ -165,6 +165,26 @@ header a {
     max-width: 10 * $global-padding;
 }
 
+.faceted-browse-page .resource-link .resource-name,
 .faceted-browse-page .resource-link ~ * {
     width: calc(100% - #{10 * $global-padding});
+}
+
+.faceted-browse-page .browse-controls .button,
+.faceted-browse-page .browse-controls button {
+    line-height: inherit;
+}
+
+.faceted-browse-page .browse-controls select {
+    height: auto;
+}
+
+.faceted-browse-page .browse-controls input[type=text],
+.faceted-browse-page .browse-controls select {
+    box-shadow: $box-shadow-setting;
+}
+
+.faceted-browse-page .omeka-pagination {
+    margin: 0;
+    width: auto;
 }
