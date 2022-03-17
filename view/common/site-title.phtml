@@ -1,5 +1,5 @@
 <?php if ($this->themeSetting('logo')): ?>
-<a href="<?php echo $siteUrl; ?>" class="site-title"><img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" title="<?php echo $siteTitle; ?> logo"></a>
+<a href="<?php echo $siteUrl; ?>" class="site-title"><img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" title="<?php echo $siteTitle; ?> logo"><?php echo $this->pageTitle($siteTitle); ?></a>
 <?php else: ?>
 <a href="<?php echo $siteUrl; ?>" class="site-title">
     <?php echo $this->pageTitle($siteTitle); ?>
@@ -8,3 +8,10 @@
     <?php endif; ?>
 </a>
 <?php endif; ?>
+
+<nav class="menu" id="responsive-menu">
+        <?php echo $site->publicNav()->menu()->setPartial('common/foundation-navigation.phtml')->renderPartialWithParams(['layout' => 'dropdown']); ?>
+        <div class="search">
+            <?php echo $this->partial('common/search-form'); ?>
+        </div>
+    </nav>

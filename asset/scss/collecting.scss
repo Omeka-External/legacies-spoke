@@ -76,7 +76,6 @@ body {
 
 header {
   border-bottom: 3px solid $primary-color;
-  margin-bottom: 4 * $global-margin;
   
   @include breakpoint(medium down) {
     margin-bottom: $global-margin;
@@ -95,8 +94,12 @@ a.site-title {
 
 .site-title h1 {
   font-size: 3 * $global-font-size;
+  display: inline;
 }
 
+.site-title img {
+  margin-right:1rem;
+}
 .contribute.button {
   margin-bottom: 0;
 }

@@ -2,14 +2,8 @@
     <nav class="top-bar-left">
         <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="large">
             <button class="menu-toggle" type="button" data-toggle="offCanvas" aria-label="<?php echo $this->translate('Menu'); ?>"><i class="fas fa-bars"></i></button>
-            <?php echo $this->partial('common/site-title', ['siteUrl' => $siteUrl, 'siteTitle' => $siteTitle]); ?>
+            <?php echo $this->partial('common/site-title', ['site' => $site, 'siteUrl' => $siteUrl, 'siteTitle' => $siteTitle]); ?>
         </div>
-        <a href="https://collectingthesetimes.org/" class="contribute button">This site is part of <em>Collecting These Times.</em></a>
+        <a href="#" class="contribute button">This site is part of <em>Locating Legacies of Slavery</em>. Learn more here.</a>
     </nav>
-    <div class="top-bar-right" id="responsive-menu">
-        <?php echo $site->publicNav()->menu()->setPartial('common/foundation-navigation.phtml')->renderPartialWithParams(['layout' => 'dropdown']); ?>
-        <div class="search">
-            <?php echo $this->partial('common/search-form'); ?>
-        </div>
-    </div>
 </div>

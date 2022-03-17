@@ -96,7 +96,7 @@ endif;
                 <?php echo $this->partial('common/header-dropdown', ['site' => $site, 'siteUrl' => $siteUrl, 'siteTitle' => $siteTitle]); ?>
             </header>
             <div class="grid-container">           
-                <?php echo $this->partial('common/site-title', ['siteUrl' => $siteUrl, 'siteTitle' => $siteTitle]); ?>
+                <?php echo $this->partial('common/site-title', ['site' => $site, 'siteUrl' => $siteUrl, 'siteTitle' => $siteTitle]); ?>
             </div>
             <div id="content" role="main">
                 <?php echo $this->content; ?>
