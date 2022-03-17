@@ -107,7 +107,7 @@ header a {
     }
 
     .intro-content em:first-of-type {
-        font-size: 1.5 * $global-font-size;
+        font-size: 1.75 * $global-font-size;
         display: block;
         line-height: 1;
         font-family: $header-font-family;
@@ -123,7 +123,7 @@ header a {
     .home .item-showcase {
         display: flex;
         flex-wrap: wrap;
-        margin: $global-margin 0;
+        margin: $global-margin 0 (5 * $global-margin);
     }
 
    .home .item-showcase .resource {
@@ -137,6 +137,11 @@ header a {
 
     .home .item-showcase img {
         max-height: 20 * $global-padding;
+    }
+
+    .home .item-showcase h3,
+    .home .item-showcase .caption {
+        padding-right: $global-padding;
     }
 
     .home .site-list .site {
