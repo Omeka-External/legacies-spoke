@@ -90,6 +90,30 @@ header a {
     text-decoration: none;
 }
 
+    // Home
+    // ====
+
+    .assets.intro-image {
+        width: 60%;
+        float: left;
+    }
+
+    .intro-content {
+        width: 40%;
+        float: right;
+        padding: 2 * $global-padding;
+        font-size: 1.5 * $global-font-size;
+    }
+
+    .intro-content em:first-of-type {
+        font-size: 2 * $global-font-size;
+        display: block;
+        line-height: 1;
+        font-family: $header-font-family;
+        font-weight: 700;
+        margin-bottom: .5 * $global-margin;
+    }
+
     // Resource Metadata
     // =================
 
