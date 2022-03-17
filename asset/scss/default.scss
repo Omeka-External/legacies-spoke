@@ -116,6 +116,10 @@ header a {
         margin-bottom: .5 * $global-margin;
     }
 
+    .intro-content + * {
+        clear: both;
+    }
+
     .home .item-showcase {
         display: flex;
         flex-wrap: wrap;
