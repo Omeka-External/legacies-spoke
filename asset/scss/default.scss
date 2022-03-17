@@ -96,7 +96,7 @@ header a {
     .assets.intro-image {
         width: 60%;
         float: left;
-        margin-bottom: $global-margin;
+        margin-bottom: 5 * $global-margin;
     }
 
     .intro-content {
@@ -123,14 +123,35 @@ header a {
     .home .item-showcase {
         display: flex;
         flex-wrap: wrap;
+        margin: $global-margin;
     }
 
-    .home .item-showcase .resource {
+   .home .item-showcase .resource {
         width: 50%;
+        text-align: left;
+    }
+
+    .home .item-showcase .resource h3 {
+        font-size: 1.25 * $global-font-size;
     }
 
     .home .item-showcase img {
-        max-height: 10em;
+        max-height: 20 * $global-padding;
+    }
+
+    .home .site-list .site {
+        clear: both;
+        margin: (2 * $global-margin) 0;
+        overflow: hidden;
+    }
+
+    .home .site-list .site-thumbnail {
+        float: left;
+        margin-right: $global-margin;
+    }
+
+    .home .site-list .site-link {
+        font-size: 1.5 * $global-font-size;
     }
 
     // Resource Metadata
@@ -243,6 +264,7 @@ header a {
 .faceted-browse-page .browse-controls select {
     box-shadow: $box-shadow-setting;
 }
+
 .faceted-browse-page .omeka-pagination {
     width: auto;
 }
