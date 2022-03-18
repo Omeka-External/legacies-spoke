@@ -82,6 +82,25 @@ header a {
     padding: $global-padding;
 }
 
+// Footer
+// ======
+
+footer:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: -25vw;
+    right: -25vw;
+    background: #000;
+    bottom: -9999px;
+    top: 0;
+}
+
+footer {
+    position: relative;
+    color: #fff;
+}
+
 // Content
 // =======
 
@@ -204,35 +223,20 @@ header a {
             z-index: -1;
         }
 
-        .list-of-sites {
+        .home .list-of-sites {
             position: relative;
             color: #fff;
         }
 
-        #content a.site-link {
+        .home .list-of-sites a.site-link {
             color: $secondary-color;
         }
 
-        .item-showcase + h2,
-        .item-showcase + h2 + p {
+        .home .item-showcase + h2,
+        .home .item-showcase + h2 + p {
             color: #fff;
         }
 
-        footer:before {
-            content: "";
-            position: absolute;
-            z-index: -1;
-            left: -25vw;
-            right: -25vw;
-            background: #000;
-            bottom: -9999px;
-            top: 0;
-        }
-
-        footer {
-            position: relative;
-            color: #fff;
-        }
 
     // Resource Metadata
     // =================
