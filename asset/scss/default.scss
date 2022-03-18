@@ -175,14 +175,6 @@ footer {
         overflow: hidden;
     }
 
-    .home .site-list .site-thumbnail {
-        float: left;
-        margin-right: $global-margin;
-    }
-
-    .home .site-list .site-link {
-        font-size: 1.5 * $global-font-size;
-    }
 
         // Temporary Home Styles
         // =====================
@@ -305,6 +297,15 @@ footer {
 
     .full-width:first-child > .asset {
         margin-top: -2 * $global-margin;
+    }
+
+    .site-list .site-thumbnail {
+        float: left;
+        margin-right: $global-margin;
+    }
+
+    .site-list .site-link {
+        font-size: 1.5 * $global-font-size;
     }
 
 
