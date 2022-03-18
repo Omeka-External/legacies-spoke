@@ -128,29 +128,6 @@ header a {
     }
 
 
-    .home .item-showcase:before {
-        content: "";
-        position: absolute;
-        top: -10em;
-        left: -25vw;
-        right: -25vw;
-        bottom: -2rem;
-        background-color: #d3ccac;
-        z-index: -2;
-    }
-
-    .home .item-showcase:after {
-        content: "";
-        position: absolute;
-        top: -10em;
-        left: -25vw;
-        right: -25vw;
-        bottom: -2rem;
-        background: url('../img/featured-bg.jpg') center/cover no-repeat;
-        z-index: -1;
-        opacity: .08;
-    }
-
    .home .item-showcase .resource {
         width: 50%;
         text-align: left;
@@ -183,6 +160,75 @@ header a {
     .home .site-list .site-link {
         font-size: 1.5 * $global-font-size;
     }
+
+        // Temporary Home Styles
+        // =====================
+
+        /* More permanent styles to come when we can get proper containers around some of these blocks. */
+
+        .home .item-showcase:before {
+            content: "";
+            position: absolute;
+            top: -10em;
+            left: -25vw;
+            right: -25vw;
+            bottom: -2rem;
+            background-color: #d3ccac;
+            z-index: -2;
+        }
+
+        .home .item-showcase:after {
+            content: "";
+            position: absolute;
+            top: -10em;
+            left: -25vw;
+            right: -25vw;
+            bottom: -2rem;
+            background: url('../img/featured-bg.jpg') center/cover no-repeat;
+            z-index: -1;
+            opacity: .08;
+        }
+
+        .home .list-of-sites:before {
+            content: "";
+            position: absolute;
+            left: -25vw;
+            right: -25vw;
+            top: -11em;
+            bottom: -9em;
+            background-color: $primary-color;
+            z-index: -1;
+        }
+
+        .list-of-sites {
+            position: relative;
+            color: #fff;
+        }
+
+        #content a.site-link {
+            color: $secondary-color;
+        }
+
+        .item-showcase + h2,
+        .item-showcase + h2 + p {
+            color: #fff;
+        }
+
+        footer:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            left: -25vw;
+            right: -25vw;
+            background: #000;
+            bottom: 0;
+            top: 0;
+        }
+
+        footer {
+            position: relative;
+            color: #fff;
+        }
 
     // Resource Metadata
     // =================
