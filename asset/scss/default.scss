@@ -33,7 +33,7 @@ body:before {
     height: 100%;
     opacity: .1;
     background: url(../img/sewanee-bg.jpg) center/cover no-repeat;
-    z-index: -1;
+    z-index: -3;
 }
 
 
@@ -124,6 +124,31 @@ header a {
         display: flex;
         flex-wrap: wrap;
         margin: $global-margin 0 (5 * $global-margin);
+        position: relative;
+    }
+
+
+    .home .item-showcase:before {
+        content: "";
+        position: absolute;
+        top: -10em;
+        left: -25vw;
+        right: -25vw;
+        bottom: -2rem;
+        background-color: #d3ccac;
+        z-index: -2;
+    }
+
+    .home .item-showcase:after {
+        content: "";
+        position: absolute;
+        top: -10em;
+        left: -25vw;
+        right: -25vw;
+        bottom: -2rem;
+        background: url('../img/featured-bg.jpg') center/cover no-repeat;
+        z-index: -1;
+        opacity: .08;
     }
 
    .home .item-showcase .resource {
