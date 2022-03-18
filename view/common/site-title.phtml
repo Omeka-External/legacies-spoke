@@ -11,7 +11,7 @@
 
 <nav class="menu" id="responsive-menu">
         <?php echo $site->publicNav()->menu()->setPartial('common/foundation-navigation.phtml')->renderPartialWithParams(['layout' => 'dropdown']); ?>
-        <div class="search">
+        <div id="global-search">
             <?php echo $this->partial('common/search-form'); ?>
         </div>
     </nav>

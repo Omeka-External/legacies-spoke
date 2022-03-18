@@ -6,35 +6,16 @@
 
 // Collecting Together Settings
 
-$header-font-family: 'Allerta', sans-serif;
+$header-font-family: 'Source Sans Pro', sans-serif;
+$body-font-family: 'Nunito', sans-serif;
 
 $topbar-background: #fff;
 $button-background-hover: $secondary-color;
+$box-shadow-setting: 2px 2px 3px 0 rgba(0,0,0,.54);
 
 @import 'foundation-core';
 @import 'omeka';
 
-.button,
-a.button,
-button,
-[type="submit"] {
-  font-family: $header-font-family;
-
-  &:hover,
-  &:focus {
-    color: $primary-color;
-    background-color: $secondary-color;
-  }
-  
-  &:before {
-    display: inline-block;
-    margin-right: .25 * $global-margin;
-  }
-}
-
-a.button {
-  text-decoration: none;  
-}
 
 a {
   color: $primary-color;
@@ -60,48 +41,53 @@ a {
 body {
   position: relative;
   height: 100vh;
-  
-  &:before {
-    content: "";
-    background: #f2f2f2;
-    background-size: 100px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-  }
+  background: #f2f2f2;
 }
 
-header {
-  border-bottom: 3px solid $primary-color;
-  
+header#link-back {
+  border-bottom: 3px solid #7f2629;
+  box-shadow: $box-shadow-setting;
+
+  .top-bar {
+    background-color: #000;
+  }
+
   @include breakpoint(medium down) {
     margin-bottom: $global-margin;
   }
+}
+
+header.main {
+  padding: (2 * $global-padding) 0 0;
 }
 
 a.site-title {
   text-decoration: none;
   display: inline-block;
   margin-bottom: $global-margin;
-  
-  &:hover {
-    background-color: $secondary-color;
-  }
 }
 
 .site-title h1 {
   font-size: 3 * $global-font-size;
+  font-weight: bold;
   display: inline;
 }
 
 .site-title img {
   margin-right:1rem;
 }
+
 .contribute.button {
   margin-bottom: 0;
+  background-color: #7f2629;
+  color: #fff;
+}
+
+@include breakpoint(medium down) {
+  a.contribute.button {
+    width: 100%;
+    margin-bottom: $global-margin;
+  }
 }
 
 .top-bar-left .contribute.button {
@@ -123,6 +109,10 @@ a.site-title {
 
 .top-bar-left a.site-title h1 {
   font-size: 1.25 * $global-font-size;
+}
+
+#global-search {
+  margin-left: auto;
 }
 
 #content {
@@ -231,22 +221,6 @@ footer {
   margin-bottom: $global-margin;
 }
 
-footer .rrchnm-logo {
-  margin-left: auto;
-  display: block;
-  text-align: right;
-  
-  img {
-    max-height: 3 * $global-padding;
-  }
-}
-
-@include breakpoint(medium down) {
-  footer .rrchnm-logo {
-    margin-left: 0;    
-  }
-}
-
 .home .intro,
 .preview-block h4,
 .home .item-showcase h3 {
@@ -285,4 +259,202 @@ footer .rrchnm-logo {
 .home .item-showcase {
   margin: (2 * $global-margin) (-1 * $global-margin);
   align-items: center;
+}
+
+// Inputs
+// ======
+
+[type="submit"],
+[type="button"],
+button,
+.button,
+a.button {
+    box-shadow: $box-shadow-setting;
+    font-family: $header-font-family;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+// Content
+// =======
+
+    // Blocks
+    // ======
+
+    .full-width .asset {
+        position: relative;
+        width: 100vw;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        max-width: none;
+        max-height: 20em;
+        overflow-y: hidden;
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+        margin-bottom: $global-margin;
+    }
+
+    .assets.full-width .asset {
+        max-width: none;
+    }
+
+    .full-width .asset img {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        max-width: none !important;
+    }
+
+    .full-width:first-child > .asset {
+        margin-top: -2 * $global-margin;
+    }
+
+    .site-list .site {
+        clear: both;
+        margin: (2 * $global-margin) 0;
+        overflow: hidden;
+    }
+
+    .site-list .site-thumbnail {
+        float: left;
+        margin-right: $global-margin;
+    }
+
+    .site-list .site-link {
+        font-size: 1.5 * $global-font-size;
+    }
+
+    // Resource Metadata
+    // =================
+
+    .resource.show #resource-values {
+        width: 100%;
+    }
+
+    .resource.show .property {
+        margin-bottom: 2 * $global-margin;
+    }
+
+    .resource.show .value .language {
+        background-color: $secondary-color;
+    }
+
+    .resource.show .media-list:first-child {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .resource.show #linked-resources .resource-link {
+        margin-bottom: $global-margin;
+        display: flex;
+        align-content: center;
+    }
+
+    #linked-resources img,
+    .resource-link img {
+        max-width: 3.5rem;
+        height: auto;
+    }
+
+    .resource-link .resource-name {
+        max-width: calc(100% - #{4.5 * $global-padding});
+    }
+
+    // Blocks
+    // ======
+
+    .full-width .asset {
+        position: relative;
+        width: 100vw;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        max-width: none;
+        max-height: 20em;
+        overflow-y: hidden;
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+        margin-bottom: $global-margin;
+    }
+
+    .full-width .asset img {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        max-width: none;
+    }
+
+    .full-width:first-child > .asset {
+        margin-top: -2 * $global-margin;
+    }
+
+    .site-list .site {
+        clear: both;
+        margin: (2 * $global-margin) 0;
+        overflow: hidden;
+    }
+
+    .site-list .site-thumbnail {
+        float: left;
+        margin-right: $global-margin;
+    }
+
+    .site-list .site-link {
+        font-size: 1.5 * $global-font-size;
+    }
+
+// Modules
+
+.faceted-browse-page #container {
+    width: 100%;
+}
+
+.faceted-browse-page .resource-list .resource {
+    clear: both;
+    margin-bottom: 2 * $global-margin;
+    overflow: hidden;
+}
+
+.faceted-browse-page .resource-list a img {
+    float: right;
+    margin-left: $global-margin;
+    max-width: 10 * $global-padding;
+}
+
+.faceted-browse-page .resource-link .resource-name,
+.faceted-browse-page .resource-link ~ * {
+    width: calc(100% - #{10 * $global-padding});
+}
+
+.faceted-browse-page .browse-controls {
+    margin: 0;
+}
+
+.faceted-browse-page .browse-controls .button,
+.faceted-browse-page .browse-controls button {
+    line-height: inherit;
+}
+
+.faceted-browse-page .browse-controls select {
+    height: auto;
+}
+
+.faceted-browse-page .browse-controls input[type=text],
+.faceted-browse-page .browse-controls select {
+    box-shadow: $box-shadow-setting;
+}
+
+.faceted-browse-page .omeka-pagination {
+    width: auto;
 }

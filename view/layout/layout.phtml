@@ -20,6 +20,7 @@ $title = $this->pageTitle($site->title());
 $userBar = $this->userBar();
 $siteUrl = $site->url();
 $siteTitle = $site->title();
+$this->jsTranslate();
 
 if ($userBar) {
   $this->htmlElement('body')->appendAttribute('class', 'user-bar');
@@ -41,6 +42,8 @@ endif;
 
         <style>
            <?php
+            ($bodyBgColor = $this->themeSetting('body_bg_color')) || ($bodyBgColor = "#f2f2f2");
+            ($contentBgColor = $this->themeSetting('content_bg_color')) || ($contentBgColor = "#ffffff");
             ($linkColor = $this->themeSetting('link_color')) || ($linkColor = "#1c6896");
             ($visitedLinkColor = $this->themeSetting('visited_link_color')) || ($visitedLinkColor = "#1c6896");
             ($activeLinkColor = $this->themeSetting('active_link_color')) || ($activeLinkColor = "#c9cff5");
@@ -51,6 +54,14 @@ endif;
             ($buttonHoverBackgroundColor = $this->themeSetting('button_hover_background_color')) || ($buttonHoverBackgroundColor = "#1c6896");
 
             ?>
+
+                body {
+                    background-color: <?php echo $bodyBgColor; ?>;
+                }
+
+                #content {
+                    background-color: <?php echo $contentBgColor; ?>;
+                }
                 
                 a:link {
                     color: <?php echo $linkColor; ?>;
@@ -92,12 +103,12 @@ endif;
         <div class="off-canvas-content" data-off-canvas-content>
             <a id="skipnav" href="#content"><?php echo $this->translate('Skip to main content'); ?></a>
             <?php echo $userBar; ?>
-            <header>
+            <header id="link-back">
                 <?php echo $this->partial('common/header-dropdown', ['site' => $site, 'siteUrl' => $siteUrl, 'siteTitle' => $siteTitle]); ?>
             </header>
-            <div class="grid-container">           
+            <header class="main grid-container">           
                 <?php echo $this->partial('common/site-title', ['site' => $site, 'siteUrl' => $siteUrl, 'siteTitle' => $siteTitle]); ?>
-            </div>
+            </header>
             <div id="content" role="main">
                 <?php echo $this->content; ?>
             </div>
