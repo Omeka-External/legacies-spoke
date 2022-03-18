@@ -169,11 +169,6 @@ footer {
         padding-right: $global-padding;
     }
 
-    .home .site-list .site {
-        clear: both;
-        margin: (2 * $global-margin) 0;
-        overflow: hidden;
-    }
 
 
         // Temporary Home Styles
@@ -297,6 +292,12 @@ footer {
 
     .full-width:first-child > .asset {
         margin-top: -2 * $global-margin;
+    }
+
+    .site-list .site {
+        clear: both;
+        margin: (2 * $global-margin) 0;
+        overflow: hidden;
     }
 
     .site-list .site-thumbnail {
