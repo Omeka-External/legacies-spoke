@@ -36,6 +36,10 @@ body:before {
     z-index: -3;
 }
 
+.off-canvas-content {
+    overflow: hidden;
+    min-height: 100vh;
+}
 
 // Inputs
 // ======
@@ -221,7 +225,7 @@ header a {
             left: -25vw;
             right: -25vw;
             background: #000;
-            bottom: 0;
+            bottom: -9999px;
             top: 0;
         }
 
