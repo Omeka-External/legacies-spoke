@@ -65,18 +65,25 @@ endif;
                 
                 a:link {
                     color: <?php echo $linkColor; ?>;
-                    border-color: <?php echo $linkColor; ?>;
                 }
+
                 a:not(.button):visited {
                     color: <?php echo $visitedLinkColor; ?>;
-                    border-color: <?php echo $visitedLinkColor; ?>;
                 }
-                a:hover, a:active, a:focus, .dropdown.menu > li.is-active > a, .dropdown.menu > li.is-dropdown-submenu-parent > a:after {
+
+                a:hover, a:active, a:focus {
                     color: <?php echo $activeLinkTextColor; ?>;
                     background-color: <?php echo $activeLinkColor; ?>;
-                    border-color: <?php echo $activeLinkTextColor; ?>;
                 }
                 
+                .dropdown.menu > li.is-active > a {
+                    color: <?php echo $activeLinkTextColor; ?>;
+                    border-color: <?php echo $activeLinkTextColor; ?> transparent transparent;
+                }
+
+                .dropdown.menu > li.is-dropdown-submenu-parent > a:after {
+                    border-color: <?php echo $linkColor; ?> transparent transparent;
+                }
         
                 .button, a.button, button, .button[disabled],.button[disabled]:hover,
                 input[type="reset"],
