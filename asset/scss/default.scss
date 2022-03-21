@@ -11,11 +11,19 @@ $button-color: $secondary-color;
 $header-font-weight: 700;
 $paragraph-lineheight: 1.75; 
 $topbar-background: #000;
+$bleed-margin: calc(38.5rem - 100vw);
 
 @import 'foundation-core';
 @import 'omeka';
 
+// Mixins
+// ======
 
+@mixin full-width {
+    left: 50%;
+    right: 50%;
+    margin: 0 -50vw;
+}
 
 // Global
 // ======
@@ -89,8 +97,8 @@ footer:before {
     content: "";
     position: absolute;
     z-index: -1;
-    left: -25vw;
-    right: -25vw;
+    left: calc(38.5rem - 100vw);
+    right: calc(38.5rem - 100vw);
     background: #000;
     bottom: -9999px;
     top: 0;
@@ -178,10 +186,9 @@ footer {
 
         .home .item-showcase:before {
             content: "";
+            @include full-width;
             position: absolute;
             top: -10em;
-            left: -25vw;
-            right: -25vw;
             bottom: -2rem;
             background-color: #d3ccac;
             z-index: -2;
@@ -189,10 +196,9 @@ footer {
 
         .home .item-showcase:after {
             content: "";
+            @include full-width;
             position: absolute;
             top: -10em;
-            left: -25vw;
-            right: -25vw;
             bottom: -2rem;
             background: url('../img/featured-bg.jpg') center/cover no-repeat;
             z-index: -1;
@@ -201,9 +207,8 @@ footer {
 
         .home .list-of-sites:before {
             content: "";
+            @include full-width;
             position: absolute;
-            left: -25vw;
-            right: -25vw;
             top: -11em;
             bottom: -9em;
             background-color: $primary-color;
@@ -265,12 +270,9 @@ footer {
     // ======
 
     .full-width .asset {
+        @include full-width;
         position: relative;
         width: 100vw;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
         max-width: none;
         max-height: 20em;
         overflow-y: hidden;
@@ -283,10 +285,7 @@ footer {
     .full-width .asset img {
         width: 100vw;
         position: relative;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
+        @include full-width;
         max-width: none;
     }
 
