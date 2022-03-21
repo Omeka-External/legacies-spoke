@@ -69,7 +69,7 @@ endif;
                 a:not(.button):visited {
                     color: <?php echo $visitedLinkColor; ?>;
                 }
-                a:hover, a:active, a:focus {
+                a:hover, a:active, a:focus, .dropdown.menu > li.is-active > a, .dropdown.menu > li.is-dropdown-submenu-parent > a:after {
                     color: <?php echo $activeLinkTextColor; ?>;
                     background-color: <?php echo $activeLinkColor; ?>;
                 }
