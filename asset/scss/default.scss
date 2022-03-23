@@ -152,6 +152,11 @@ footer {
         max-height: 40 * $global-padding;
     }
 
+    .home .intro-image,
+    .home .item-showcase {
+        margin-bottom: 5 * $global-margin;
+    }
+
     .intro-content {
         width: 40%;
         position: absolute;
@@ -160,6 +165,18 @@ footer {
         padding: 2 * $global-padding;
         font-size: 1.25 * $global-font-size;
         box-shadow: $box-shadow-setting;
+    }
+
+    .intro-content.red-background::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: url(../img/sewanee-bg.jpg) center/cover no-repeat;
+        z-index: -1;
+        opacity: .08;
     }
 
     .intro-content em:first-of-type {
@@ -183,9 +200,8 @@ footer {
         position: relative;
     }
 
-
    .home .item-showcase .resource {
-        width: 50%;
+        width: 33.33%;
         text-align: left;
     }
 
