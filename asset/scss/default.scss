@@ -95,6 +95,11 @@ header div.search {
     display: none;
 }
 
+.site-title img {
+    margin: 0;
+    max-height: 4 * $global-padding;
+}
+
 // Navigation
 // ==========
 
@@ -144,7 +149,7 @@ footer {
     // ====
 
     .full-width.intro-image .asset {
-        max-height: 20 * $global-padding;
+        max-height: 40 * $global-padding;
     }
 
     .intro-content {
