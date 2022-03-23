@@ -152,8 +152,7 @@ footer {
         max-height: 40 * $global-padding;
     }
 
-    .home .intro-image,
-    .home .item-showcase {
+    .home .intro-image {
         margin-bottom: 5 * $global-margin;
     }
 
@@ -165,6 +164,11 @@ footer {
         padding: 2 * $global-padding;
         font-size: 1.25 * $global-font-size;
         box-shadow: $box-shadow-setting;
+
+        & > * {
+            position: relative;
+            z-index: 1;
+        }
     }
 
     .intro-content.red-background::after {
@@ -174,8 +178,8 @@ footer {
         right: 0;
         left: 0;
         bottom: 0;
-        background: url(../img/sewanee-bg.jpg) center/cover no-repeat;
-        z-index: -1;
+        background: url(../img/featured-bg.jpg) center/cover no-repeat;
+        z-index: 0;
         opacity: .08;
     }
 
@@ -196,13 +200,14 @@ footer {
     .home .item-showcase {
         display: flex;
         flex-wrap: wrap;
-        margin: $global-margin 0 (5 * $global-margin);
+        margin: $global-margin 0 (8 * $global-margin);
         position: relative;
     }
 
    .home .item-showcase .resource {
         width: 33.33%;
         text-align: left;
+        padding-right: $global-padding;
     }
 
     .home .item-showcase .resource h3 {
@@ -212,12 +217,6 @@ footer {
     .home .item-showcase img {
         max-height: 20 * $global-padding;
     }
-
-    .home .item-showcase h3,
-    .home .item-showcase .caption {
-        padding-right: $global-padding;
-    }
-
 
 
         // Temporary Home Styles
