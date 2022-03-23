@@ -237,6 +237,13 @@ footer {
         .home .list-of-sites {
             position: relative;
             color: #fff;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .home .list-of-sites .site {
+            width: 33.33%;
+            padding-right: $global-margin;
         }
 
         .home .list-of-sites a.site-link {
