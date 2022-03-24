@@ -255,6 +255,9 @@ footer {
 
         .home .list-of-sites a.site-link {
             color: $secondary-color;
+            line-height: 1;
+            margin-bottom: 1rem;
+            display: block;
         }
 
         .home .item-showcase + h2,
@@ -366,7 +369,7 @@ footer {
 
 .faceted-browse-page .resource-link .resource-name,
 .faceted-browse-page .resource-link ~ * {
-    width: calc(100% - #{10 * $global-padding});
+    width: calc(100% - #{11 * $global-padding});
 }
 
 .faceted-browse-page .browse-controls {
@@ -389,4 +392,11 @@ footer {
 
 .faceted-browse-page .omeka-pagination {
     width: auto;
+}
+
+.faceted-browse-page .description {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
 }
