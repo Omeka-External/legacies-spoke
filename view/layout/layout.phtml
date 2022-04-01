@@ -119,6 +119,9 @@ endif;
             <header class="main top-bar">           
                 <?php echo $this->partial('common/site-title', ['site' => $site, 'siteUrl' => $siteUrl, 'siteTitle' => $siteTitle]); ?>
             </header>
+            <div id="global-search">
+                <?php echo $this->partial('common/search-form'); ?>
+            </div>
             <div id="content" role="main" class="grid-x grid-padding-x">
                 <?php echo $this->content; ?>
             </div>
