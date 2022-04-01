@@ -3,16 +3,6 @@
 @import 'globals-default';
 @import 'settings';
 @import 'globals-legacies';
-
-// Collecting Together Settings
-
-$header-font-family: 'Source Sans Pro', sans-serif;
-$body-font-family: 'Nunito', sans-serif;
-
-$topbar-background: #fff;
-$button-background-hover: $secondary-color;
-$box-shadow-setting: 2px 2px 3px 0 rgba(0,0,0,.54);
-
 @import 'foundation-core';
 @import 'omeka';
 
@@ -24,7 +14,7 @@ a {
   &:hover,
   &:active {
     text-decoration: none;
-    background-color: $secondary-color;
+    font-weight: bold;
   }
 }
 
@@ -42,11 +32,23 @@ body {
   position: relative;
   height: 100vh;
   background: #f2f2f2;
+
+  &:after {
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -10;
+  }
 }
 
 header#link-back {
   border-bottom: 3px solid #7f2629;
   box-shadow: $box-shadow-setting;
+  position: relative;
+  z-index: 1;
 
   .top-bar {
     background-color: #000;
@@ -58,7 +60,7 @@ header#link-back {
 }
 
 header.main {
-  padding: (2 * $global-padding) 0 0;
+  padding: $global-padding;
 }
 
 a.site-title {
@@ -98,12 +100,15 @@ a.site-title {
   @include show-for(large);
 }
 
+#responsive-menu {
+  @include hide-for(medium down);
+}
+
 #responsive-menu .contribute.button {
   @include hide-for(large);
 }
 
 .top-bar-left a.site-title {
-  @include hide-for(large);
   margin-bottom: 0;
 }
 
@@ -112,7 +117,20 @@ a.site-title {
 }
 
 #global-search {
-  margin-left: auto;
+  max-width: $grid-container;
+  margin: auto;
+  padding-top: $global-padding;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: -1rem;
+    left: -9999px;
+    right: -9999px;
+    z-index: -1;
+  }
 }
 
 #content {
@@ -146,6 +164,16 @@ a.site-title {
 #blocks form label {
   font-weight: bold;
 }
+
+// Browse
+// ======
+
+.resource.browse .browse-controls {
+  width: 100%;
+}
+
+// Show
+// ==== 
 
 .resource.show .grid-x {
   flex-direction: row-reverse;
@@ -280,6 +308,10 @@ a.button {
 
     // Blocks
     // ======
+
+    .full-width {
+        margin-bottom: 2 * $global-margin;
+    }
 
     .full-width .asset {
         position: relative;

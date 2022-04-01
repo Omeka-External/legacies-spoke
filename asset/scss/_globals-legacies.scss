@@ -1,5 +1,5 @@
 @import "util/util";
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,500;0,700;1,500;1,700&family=Source+Sans+Pro:ital,wght@0,900;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,600;0,700;1,600;1,700&family=Rubik:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 $foundation-palette: (
   primary: #1c6896,
@@ -9,5 +9,13 @@ $foundation-palette: (
   alert: #cc4b37,
 );
 
-$global-font-size: 15px;
-$body-font-family: 'Karla', sans-serif;
+$global-font-size: 100%;
+$global-width: rem-calc(1200);
+$global-lineheight: 1.75;
+
+$header-font-family: 'Source Sans Pro', sans-serif;
+$body-font-family: 'Rubik', sans-serif;
+
+$topbar-background: transparent;
+$button-background-hover: $secondary-color;
+$box-shadow-setting: 2px 2px 3px 0 rgba(0,0,0,.54);
