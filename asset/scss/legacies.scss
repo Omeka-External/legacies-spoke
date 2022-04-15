@@ -392,6 +392,7 @@ a.button {
     .resource-link img {
         max-width: 3.5rem;
         height: auto;
+        margin-right: .5 * $global-margin;
     }
 
     .resource-link .resource-name {

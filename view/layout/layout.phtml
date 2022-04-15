@@ -78,14 +78,18 @@ endif;
             .button, a.button, button, .button[disabled],.button[disabled]:hover,
             input[type="reset"],
             input[type="submit"],
-            input[type="button"] {
+            input[type="button"],
+            .site-page-pagination a,
+            .site-page-pagination a:not(.button):visited {
                 background-color: <?php echo $buttonColor; ?>;
                 color: <?php echo $buttonTextColor; ?>;
             }
+
             .button:hover, button:hover,
             input[type="reset"]:hover,
             input[type="submit"]:hover,
-            input[type="button"]:hover {
+            input[type="button"]:hover,
+            .site-page-pagination a:hover {
                 background-color: <?php echo $buttonHoverBackgroundColor; ?>;
                 color: <?php echo $buttonHoverTextColor; ?>;
             }     
@@ -100,8 +104,10 @@ endif;
             }
             <?php endif; ?>
 
-            header.main {
+            header.main,
+            .top-bar ul ul {
                 background-color: <?php echo $headerBackgroundColor; ?>;
+                border-color: transparent;
             }
 
             header.main a:link {
@@ -112,7 +118,10 @@ endif;
                 color: <?php echo $headerVisitedLinkColor; ?>;
             }
 
-            header.main a:hover, header.main a:active, header.main a:focus {
+            header.main a:hover, 
+            header.main a:active, 
+            header.main a:focus,
+            .dropdown.menu > li.is-dropdown-submenu-parent.active:hover > a {
                 color: <?php echo $headerVctiveLinkTextColor; ?>;
                 background-color: <?php echo $headerActiveLinkColor; ?>;
             }
@@ -130,12 +139,11 @@ endif;
             }
             
             .dropdown.menu > li.is-active > a {
-                color: <?php echo $activeLinkTextColor; ?>;
                 border-color: <?php echo $activeLinkTextColor; ?> transparent transparent;
             }
 
             .dropdown.menu > li.is-dropdown-submenu-parent > a:after {
-                border-color: <?php echo $linkColor; ?> transparent transparent;
+                border-color: <?php echo $headerLinkColor; ?> transparent transparent;
             }              
         </style>
     </head>
