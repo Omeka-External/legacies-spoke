@@ -109,6 +109,10 @@ a.site-title {
   @include hide-for(large);
 }
 
+.dropdown.menu > li.is-dropdown-submenu-parent.active > a:after {
+  margin-right: 0;
+}
+
 .top-bar-left a.site-title {
   margin-bottom: 0;
 }
@@ -126,7 +130,7 @@ a.site-title {
     content: "";
     position: absolute;
     top: 0;
-    bottom: -1rem;
+    bottom: 0;
     left: -9999px;
     right: -9999px;
     z-index: 0;

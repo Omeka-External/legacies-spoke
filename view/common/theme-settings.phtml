@@ -77,13 +77,16 @@
         color: <?php echo $headerLinkColor; ?>;
     }
 
-    header.main a:not(.button):visited,
-    #res a:not(.button):visited {
+    #responsive-menu a:not(.button):visited {
         color: <?php echo $headerVisitedLinkColor; ?>;
     }
 
     .site-title:hover {
         color: <?php echo $logoLinkColor; ?>
+    }
+
+    .site-title:not(.button):visited {
+        color: <?php echo $logoVisitedLinkColor; ?>;
     }
 
     .site-title:hover, 
