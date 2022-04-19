@@ -6,6 +6,10 @@
     ($visitedLinkColor = $this->themeSetting('visited_link_color')) || ($visitedLinkColor = "#1c6896");
     ($activeLinkColor = $this->themeSetting('active_link_color')) || ($activeLinkColor = "#c9cff5");
     ($activeLinkTextColor = $this->themeSetting('active_link_text_color')) || ($activeLinkTextColor = "#1c6896");
+    ($logoLinkColor = $this->themeSetting('logo_link_color')) || ($logoLinkColor = "#1c6896");
+    ($logoVisitedLinkColor = $this->themeSetting('logo_visited_link_color')) || ($logoVisitedLinkColor = "#1c6896");
+    ($logoActiveLinkColor = $this->themeSetting('logo_active_link_color')) || ($logoActiveLinkColor = "#c9cff5");
+    ($logoActiveLinkTextColor = $this->themeSetting('logo_active_link_text_color')) || ($logoActiveLinkTextColor = "#1c6896");
     ($headerLinkColor = $this->themeSetting('header_link_color')) || ($headerLinkColor = "#1c6896");
     ($headerVisitedLinkColor = $this->themeSetting('header_visited_link_color')) || ($headerVisitedLinkColor = "#1c6896");
     ($headerActiveLinkColor = $this->themeSetting('header_active_link_color')) || ($headerActiveLinkColor = "#c9cff5");
@@ -76,6 +80,16 @@
     header.main a:not(.button):visited,
     #res a:not(.button):visited {
         color: <?php echo $headerVisitedLinkColor; ?>;
+    }
+
+    .site-title:hover {
+        color: <?php echo $logoLinkColor; ?>
+    }
+
+    .site-title:hover, 
+    .site-title:active, 
+    .site-title:focus {
+        color: <?php echo $logoActiveLinkTextColor; ?>
     }
 
     header.main a:hover, 
