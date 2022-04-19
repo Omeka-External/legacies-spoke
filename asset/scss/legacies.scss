@@ -61,6 +61,7 @@ header#link-back {
 
 header.main {
   padding: $global-padding;
+  flex-wrap: wrap;
 }
 
 a.site-title {
@@ -116,10 +117,9 @@ a.site-title {
   font-size: 1.25 * $global-font-size;
 }
 
-#global-search {
-  max-width: $grid-container;
-  margin: auto;
-  padding-top: $global-padding;
+#responsive-menu {
+  width: 100%;
+  margin: $global-margin auto (-1 * $global-margin);
   position: relative;
 
   &:after {
@@ -129,7 +129,18 @@ a.site-title {
     bottom: -1rem;
     left: -9999px;
     right: -9999px;
-    z-index: -1;
+    z-index: 0;
+  }
+
+  & > .menu {
+    margin-left: auto;
+    position: relative;
+    z-index: 1;
+
+    a {
+      padding: $global-padding;
+      padding-right: 1.5 * $global-padding;
+    }
   }
 }
 
