@@ -63,7 +63,6 @@ endif;
                     <?php echo $site->publicNav()->menu()->setPartial('common/foundation-navigation.phtml')->renderPartialWithParams(['layout' => 'dropdown']); ?>
                 </nav>
             </header>
-         </div>
             <div id="content" role="main" class="grid-x grid-padding-x">
                 <?php echo $this->content; ?>
             </div>
@@ -94,7 +93,8 @@ endif;
                 <?php endif; ?>
                 </div>
             </footer>
-        </div>
+         </div>
+
         <script>
           $(document).foundation();
         </script>

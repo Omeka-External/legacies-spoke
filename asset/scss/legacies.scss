@@ -62,6 +62,17 @@ header#link-back {
 header.main {
   padding: $global-padding;
   flex-wrap: wrap;
+
+  @include hide-for(medium down);
+}
+
+.title-bar button {
+  box-shadow: none;
+}
+
+.submenu-toggle {
+  background-color: transparent;
+  box-shadow: none;
 }
 
 a.site-title {
