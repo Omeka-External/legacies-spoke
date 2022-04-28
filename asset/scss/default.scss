@@ -145,6 +145,28 @@ footer {
     color: #fff;
 }
 
+
+.yellow-background:before {
+    content: "";
+    position: absolute;
+    left: -9999px;
+    right: -9999px;
+    background: $secondary-color;
+    z-index: 0;
+    display: block;
+    bottom: 0;
+    top: 0;
+}
+
+.yellow-background {
+    position: relative;
+    padding: (2 * $global-padding) 0 $global-padding;
+}
+
+.yellow-background > * {
+    position: relative;
+}
+
     // Home
     // ====
 
