@@ -140,52 +140,61 @@ footer {
     text-decoration: none;
 }
 
-.red-background {
-    background-color: $primary-color;
+.red.background-color {
     color: #fff;
 }
 
+.red.background-color:before {
+    background-color: $primary-color;
+}
 
-.yellow-background:before {
+.yellow.background-color:before {
+    background: $secondary-color;
+}
+
+.background-color:before {
     content: "";
     position: absolute;
     left: -9999px;
     right: -9999px;
-    background: $secondary-color;
     z-index: 0;
     display: block;
     bottom: 0;
     top: 0;
 }
 
-.yellow-background {
+.background-color {
     position: relative;
     padding: (2 * $global-padding) 0 $global-padding;
 }
 
-.yellow-background > * {
+.background-color > * {
     position: relative;
 }
 
     // Home
     // ====
 
-    .full-width.intro-image .asset {
-        max-height: 40 * $global-padding;
+    body.home:not(.browse) #content {
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
-    .home .intro-image {
-        margin-bottom: 5 * $global-margin;
+    .full-width.intro-image .asset {
+        max-height: 40 * $global-padding;
     }
 
     .intro-content {
         width: 40%;
         position: absolute;
+        color: #fff;
         top: 2rem;
         right: 0;
         padding: 2 * $global-padding;
+        padding-bottom: 0;
         font-size: 1.25 * $global-font-size;
         box-shadow: $box-shadow-setting;
+        background-color: $primary-color;
 
         & > * {
             position: relative;
@@ -193,7 +202,7 @@ footer {
         }
     }
 
-    .intro-content.red-background::after {
+    .intro-content:after {
         content: "";
         position: absolute;
         top: 0;
@@ -217,6 +226,12 @@ footer {
 
     .intro-content + * {
         clear: both;
+    }
+
+    .intro-content a.button {
+        font-size: $global-font-size;
+        color: $primary-color;
+        background-color: $secondary-color;
     }
 
     .home .item-showcase {
@@ -250,8 +265,8 @@ footer {
             content: "";
             @include full-width;
             position: absolute;
-            top: -11em;
-            bottom: -9em;
+            top: 0;
+            bottom: 0;
             background-color: $primary-color;
             z-index: -1;
         }
@@ -341,7 +356,6 @@ footer {
         display: flex;
         align-content: center;
         flex-wrap: wrap;
-        margin-bottom: $global-margin;
     }
 
     .full-width .asset img {
