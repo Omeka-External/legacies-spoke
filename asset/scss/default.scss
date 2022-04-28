@@ -255,6 +255,19 @@ footer {
         max-height: 20 * $global-padding;
     }
 
+    .highlight {
+        float: left;
+        width: calc(50% - #{2 * $global-margin});
+        padding: (2 * $global-padding) (2 * $global-padding) $global-padding;
+        background: $primary-color;
+        color: #fff;
+        margin: (2 * $global-margin) (2 * $global-margin) $global-margin 0;
+        box-shadow: $box-shadow-setting;
+    }
+
+    .highlight a {
+        color: $secondary-color;
+    }
 
         // Temporary Home Styles
         // =====================
