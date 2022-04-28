@@ -382,6 +382,18 @@ footer {
         margin-top: -2 * $global-margin;
     }
 
+    .full-width.full-height .asset {
+        max-height: none;
+    }
+
+    .full-width.anchor-to-top .asset {
+        align-content: flex-start;
+    }
+
+    .full-width.anchor-to-bottom .asset {
+        align-content: flex-end;
+    }
+
     .site-list .site {
         clear: both;
         margin: (2 * $global-margin) 0;
