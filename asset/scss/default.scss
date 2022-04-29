@@ -121,6 +121,12 @@ footer:before {
     background: #000;
     bottom: -9999px;
     top: 0;
+
+    @include breakpoint(medium down) {
+        top: -1 * $global-margin;
+        left: -9999px;
+        right: -9999px;
+    }
 }
 
 footer {
@@ -191,16 +197,28 @@ footer {
         top: 2rem;
         right: 0;
         padding: 2 * $global-padding;
-        padding-bottom: 0;
         font-size: 1.25 * $global-font-size;
         box-shadow: $box-shadow-setting;
         background-color: $primary-color;
+
+        @include breakpoint(medium down) {
+            position: relative;
+            top: 0;
+            right: auto;
+            width: auto;
+            margin: 0 (-2 * $global-margin);
+        }
 
         & > * {
             position: relative;
             z-index: 1;
         }
+
+        a.button {
+            margin-bottom: 0;
+        }
     }
+
 
     .intro-content:after {
         content: "";
@@ -245,6 +263,11 @@ footer {
         width: 33.33%;
         text-align: left;
         padding-right: 4 * $global-padding;
+
+        @include breakpoint(medium down) {
+            width: 100%;
+            padding-right: 0;
+        }
     }
 
     .home .item-showcase .resource h3 {
@@ -263,6 +286,11 @@ footer {
         color: #fff;
         margin: (2 * $global-margin) (2 * $global-margin) $global-margin 0;
         box-shadow: $box-shadow-setting;
+
+        @include breakpoint(medium down) {
+            width: 100%;
+            margin: (2 * $global-margin) 0 $global-margin;
+        }
     }
 
     .highlight a {
@@ -469,4 +497,9 @@ footer {
 
 .faceted-browse-page .facet label input {
     margin: (.25 * $global-margin) (.25 * $global-margin) 0 0;
+}
+
+.faceted-browse-page .category,
+.faceted-browse-page .facet {
+    margin-bottom: 1.5 * $global-margin;
 }
