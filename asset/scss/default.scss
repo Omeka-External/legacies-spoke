@@ -464,8 +464,9 @@ footer {
 
 .facet label {
     align-items: flex-start;
+    margin-bottom: (.5 * $global-margin);
 }
 
-.facet label input {
+.faceted-browse-page .facet label input {
     margin: (.25 * $global-margin) (.25 * $global-margin) 0 0;
 }
