@@ -178,6 +178,10 @@ footer {
     position: relative;
 }
 
+.break {
+    float: left;
+}
+
     // Home
     // ====
 
@@ -272,6 +276,10 @@ footer {
 
     .home .item-showcase .resource h3 {
         font-size: 1.5 * $global-font-size;
+
+        @include breakpoint(medium down) {
+            font-size: inherit;
+        }
     }
 
     .home .item-showcase img {
@@ -289,7 +297,7 @@ footer {
 
         @include breakpoint(medium down) {
             width: 100%;
-            margin: (2 * $global-margin) 0 $global-margin;
+            margin: $global-margin 0;
         }
     }
 
