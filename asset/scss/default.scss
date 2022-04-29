@@ -461,3 +461,11 @@ footer {
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
 }
+
+.facet label {
+    align-items: flex-start;
+}
+
+.facet label input {
+    margin: (.25 * $global-margin) (.25 * $global-margin) 0 0;
+}
