@@ -1,4 +1,5 @@
 <div class="top-bar-left">
+<button class="menu-toggle" type="button" data-toggle="offCanvas" aria-label="<?php echo $this->translate('Menu'); ?>"><i class="fas fa-bars"></i></button>
 <?php if ($this->themeSetting('logo')): ?>
 <a href="<?php echo $siteUrl; ?>" class="site-title"><img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" title="<?php echo $siteTitle; ?> logo"><?php echo $this->pageTitle($siteTitle); ?></a>
 <?php else: ?>

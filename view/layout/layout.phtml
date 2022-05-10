@@ -53,10 +53,8 @@ endif;
         <div class="off-canvas-content" data-off-canvas-content>
             <a id="skipnav" href="#content"><?php echo $this->translate('Skip to main content'); ?></a>
             <?php echo $userBar; ?>
-            <header id="link-back">
-                <?php echo $this->partial('common/header-dropdown', ['site' => $site, 'siteUrl' => $siteUrl, 'siteTitle' => $siteTitle]); ?>
-            </header>
-            <header class="main top-bar">           
+            <?php echo $this->partial('common/link-back', ['site' => $site, 'siteUrl' => $siteUrl, 'siteTitle' => $siteTitle]); ?>
+            <header class="main title-bar top-bar">           
                 <?php echo $this->partial('common/site-title', ['site' => $site, 'siteUrl' => $siteUrl, 'siteTitle' => $siteTitle]); ?>
                 <?php echo $this->partial('common/search-form'); ?>
                 <nav class="menu top-bar-right" id="responsive-menu">
