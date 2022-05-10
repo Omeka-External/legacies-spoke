@@ -28,7 +28,7 @@
         color: <?php echo $linkColor; ?>;
     }
 
-    a:not(.button):visited {
+    a:visited {
         color: <?php echo $visitedLinkColor; ?>;
     }
 
@@ -37,12 +37,18 @@
         background-color: <?php echo $activeLinkColor; ?>;
     }
 
-    .button, a.button, button, .button[disabled],.button[disabled]:hover,
+    .button, 
+    a.button, 
+    a.button:visited,
+    button, 
+    .button[disabled], 
+    .button[disabled]:hover,
     input[type="reset"],
     input[type="submit"],
     input[type="button"],
     .site-page-pagination a,
-    .site-page-pagination a:not(.button):visited {
+    .site-page-pagination a:not(.button):visited,
+    #search-form button {
         background-color: <?php echo $buttonColor; ?>;
         color: <?php echo $buttonTextColor; ?>;
     }
@@ -51,7 +57,8 @@
     input[type="reset"]:hover,
     input[type="submit"]:hover,
     input[type="button"]:hover,
-    .site-page-pagination a:hover {
+    .site-page-pagination a:hover,
+    #search-form button:hover {
         background-color: <?php echo $buttonHoverBackgroundColor; ?>;
         color: <?php echo $buttonHoverTextColor; ?>;
     }     
@@ -67,18 +74,22 @@
     <?php endif; ?>
 
     header.main,
-    .top-bar ul ul {
+    .top-bar ul ul,
+    #offCanvas .accordion-menu li {
         background-color: <?php echo $headerBackgroundColor; ?>;
         border-color: transparent;
     }
 
     header.main a:link,
-    #respponsive-menu a:link {
+    #responsive-menu li a:link,
+    #offCanvas .menu a:link {
         color: <?php echo $headerLinkColor; ?>;
     }
-
-    #responsive-menu a:not(.button):visited {
-        color: <?php echo $headerVisitedLinkColor; ?>;
+    
+    header.main a:visited,
+    #responsive-menu a:visited,
+    #offCanvas .menu a:visited {
+        color: <?php echo $headerVisitedLinkColor; ?>
     }
 
     .site-title:hover {
@@ -105,15 +116,19 @@
         background-color: <?php echo $headerActiveLinkColor; ?>;
     }
 
-    .submenu-toggle:after {
-        border-color: <?php echo $linkColor; ?> transparent transparent;
+    .submenu-toggle:hover {
+        background-color: <?php echo $headerBackgroundColor; ?>;
     }
 
     .submenu-toggle:after {
         border-color: <?php echo $linkColor; ?> transparent transparent;
     }
 
-    .dropdown-toggle + .submenu-toggle:after {
+    #offCanvas .submenu-toggle:after {
+        border-color: <?php echo $headerLinkColor; ?> transparent transparent;
+    }
+
+    #responsive-menu .dropdown-toggle + .submenu-toggle:after {
         border-color: <?php echo $visitedLinkColor; ?> transparent transparent;
     }
 

@@ -95,17 +95,21 @@ a.site-title {
   margin-right:1rem;
 }
 
-.contribute.button {
+.contribute.button,
+.contribute.button:hover {
   margin-bottom: 0;
-  background-color: #7f2629;
-  color: #fff;
+  background-color: #7f2629 !important;
+  color: #fff !important;
 }
 
 @include breakpoint(medium down) {
   a.contribute.button {
     width: 100%;
-    margin-bottom: $global-margin;
-  }
+    background-color: #000 !important;
+    color: #fff !important;
+    border-bottom: 3px solid #7f2629;
+    box-shadow: $box-shadow-setting;
+ }
 }
 
 .top-bar-left .contribute.button {
@@ -118,6 +122,10 @@ a.site-title {
 
 #responsive-menu {
   @include hide-for(medium down);
+}
+
+#responsive-menu .contribute.button {
+  @include hide-for(large);
 }
 
 .dropdown.menu > li.is-dropdown-submenu-parent.active > a:after {
