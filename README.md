@@ -38,7 +38,8 @@ For advanced CSS and Sass users, Foundation S uses ZURB Foundation Site's toolki
 Run these commands within the theme's root directory.
 
 * **npm start**: While this task runs, it watches for changes to sass files and recompiles the CSS.
-* **gulp sass**: This is the one-off task for compiling the current Sass/CSS.
+* **gulp css**: This is the one-off task for compiling the current Sass/CSS.
+* * **gulp css:watch**: This task watches for changes in the Sass, then compiles the CSS.
 
 ### Sass File Structure
 
@@ -79,3 +80,16 @@ Any non-global setting variable overrides should come after the import for `_set
 ZURB Foundation's default style rules are all managed in `_foundation-core.scss`. All style rules specific to Omeka S are contained within `_omeka.scss`.
 
 After all those imports come all style rules specific to the theme.
+
+## Copyright
+Foundation S is Copyright © 2020-present Corporation for Digital Scholarship, Vienna, Virginia, USA http://digitalscholar.org
+
+The Corporation for Digital Scholarship distributes the Omeka source code
+under the GNU General Public License, version 3 (GPLv3). The full text
+of this license is given in the license file.
+
+The Omeka name is a registered trademark of the Corporation for Digital Scholarship.
+
+Third-party copyright in this distribution is noted where applicable.
+
+All rights not expressly granted are reserved.

@@ -216,6 +216,21 @@ header .top-bar {
   }
 }
 
+.banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    &.contained {
+      @include xy-grid-container;
+    }
+}
+
+.banner img {
+    width: 100%;
+}
+
 body.vertical-menu header {
   background-color: $primary-color;
   width: 100%;
@@ -684,6 +699,48 @@ body.vertical-menu footer {
   background-color: $light-gray;
 }
 
+#itemfiles.topgallery,
+#itemfiles.leftgallery {
+  height: 60vh;
+  width: 100%;
+  margin-bottom: $global-margin;
+}
+
+#itemfiles.topgallery .media.resource,
+#itemfiles.leftgallery .media.resource {
+  height: 0;
+  overflow: hidden;
+}
+
+#itemfiles .img-responsive {
+  opacity: 0;
+}
+
+#itemfiles .lg-img-wrap,
+#itemfiles .lg-video-object,
+#itemfiles .lg-video-poster {
+  padding-bottom: 3 * $global-padding;
+}
+
+#itemfiles .lg-outer .lg-video-cont .lg-object {
+  width: auto !important;
+}
+
+.lg-outer[data-lg-slide-type="video"] .lg-download {
+  opacity: 1 !important;
+  pointer-events: all !important;
+}
+
+#itemfiles.leftgallery {
+  width: 70%;
+  align-self: flex-start;
+}
+
+#itemfiles.leftgallery ~ #resource-values {
+  padding-left: $global-padding;
+  margin: 0;
+  width: 30%;
+}
 // #. Advanced search
 // ------------------
 
