@@ -20,7 +20,7 @@
     ($buttonHoverBackgroundColor = $this->themeSetting('button_hover_background_color')) || ($buttonHoverBackgroundColor = "#1c6896");
     ($headerBackgroundColor = $this->themeSetting('header_background_color')) || ($headerBackgroundColor = "#ffffff");
     ($footerBackgroundColor = $this->themeSetting('footer_background_color')) || ($footerBackgroundColor = "#ffffff");
-    ($searchBackgroundColor = $this->themeSetting('search_background_color')) || ($searchBackgroundColor = "#ffffff");
+    ($navBackgroundColor = $this->themeSetting('nav_background_color')) || ($navBackgroundColor = "#ffffff");
 
     ?>
 
@@ -81,37 +81,42 @@
     }
 
     header.main a:link,
-    #responsive-menu li a:link,
+    #responsive-menu a:link,
     #offCanvas .menu a:link {
         color: <?php echo $headerLinkColor; ?>;
     }
     
+    .site-title,
+    #responsive-menu .submenu a:link {
+        color: <?php echo $logoLinkColor; ?>
+    }
+
+    .site-title:not(.button):visited,
+    #responsive-menu .submenu a:visited {
+        color: <?php echo $logoVisitedLinkColor; ?>;
+    }
+
     header.main a:visited,
     #responsive-menu a:visited,
     #offCanvas .menu a:visited {
         color: <?php echo $headerVisitedLinkColor; ?>
     }
 
-    .site-title:hover {
-        color: <?php echo $logoLinkColor; ?>
-    }
-
-    .site-title:not(.button):visited {
-        color: <?php echo $logoVisitedLinkColor; ?>;
-    }
-
     .site-title:hover, 
     .site-title:active, 
-    .site-title:focus {
+    .site-title:focus, 
+    #responsive-menu .submenu a:hover, 
+    #responsive-menu .submenu a:active, 
+    #responsive-menu .submenu a:focus, {
         color: <?php echo $logoActiveLinkTextColor; ?>
     }
 
     header.main a:hover, 
     header.main a:active, 
     header.main a:focus, 
-    #respponsive-menu a:hover, 
-    #respponsive-menu a:active, 
-    #respponsive-menu a:focus {
+    #responsive-menu a:hover, 
+    #responsive-menu a:active, 
+    #responsive-menu a:focus {
         color: <?php echo $headerActiveLinkTextColor; ?>;
         background-color: <?php echo $headerActiveLinkColor; ?>;
     }
@@ -138,7 +143,7 @@
 
     #responsive-menu:after,
     .dropdown.menu > li.is-dropdown-submenu-parent.active:hover > a {
-        background-color: <?php echo $searchBackgroundColor; ?>;
+        background-color: <?php echo $navBackgroundColor; ?>;
     }
 
     #content {
