@@ -108,20 +108,6 @@ if ($galleryDisplay) {
     <?php $this->trigger('view.show.before'); ?>
     <?php echo $item->displayValues(); ?>
 
-    <?php $itemSets = $item->itemSets(); ?>
-    <?php if (count($itemSets) > 0): ?>
-        <dl>
-            <div class="property">
-                <dt><?php echo $translate('Item sets'); ?></dt>
-                <div class="values">
-                    <?php foreach ($itemSets as $itemSet): ?>
-                        <dd class="value"><a href="<?php echo $escape($itemSet->url()); ?>"><?php echo $itemSet->displayTitle(); ?></a></dd>
-                   <?php endforeach; ?>
-                </div>
-            </div>
-        </dl>
-    <?php endif; ?>
-    
     <?php if ($galleryDisplay || $mediaDisplay == 'single'): ?>
         <?php $mediaList = ($galleryDisplay) ? $otherMedia : $itemMedia; ?>
     <?php endif; ?>
