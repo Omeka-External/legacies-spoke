@@ -43,9 +43,9 @@
     button, 
     .button[disabled], 
     .button[disabled]:hover,
-    input[type="reset"],
-    input[type="submit"],
-    input[type="button"],
+    [type="reset"],
+    [type="submit"],
+    [type="button"],
     .site-page-pagination a,
     .site-page-pagination a:not(.button):visited,
     #search-form button {
@@ -54,11 +54,24 @@
     }
 
     .button:hover, button:hover,
-    input[type="reset"]:hover,
-    input[type="submit"]:hover,
-    input[type="button"]:hover,
+    [type="reset"]:hover,
+    [type="submit"]:hover,
+    [type="button"]:hover,
     .site-page-pagination a:hover,
-    #search-form button:hover {
+    #search-form button:active,
+    .button:hover, button:active,
+    [type="reset"]:active,
+    [type="submit"]:active,
+    [type="button"]:active,
+    .site-page-pagination a:active,
+    #search-form button:active,
+    #search-form button:focus,
+    .button:hover, button:focus,
+    [type="reset"]:focus,
+    [type="submit"]:focus,
+    [type="button"]:focus,
+    .site-page-pagination a:focus,
+    #search-form button:focus {
         background-color: <?php echo $buttonHoverBackgroundColor; ?>;
         color: <?php echo $buttonHoverTextColor; ?>;
     }     
@@ -80,24 +93,30 @@
         border-color: transparent;
     }
 
-    header.main a:link,
-    #responsive-menu a:link,
-    #offCanvas .menu a:link {
+    #responsive-menu a:link {
         color: <?php echo $headerLinkColor; ?>;
     }
     
+    #responsive-menu a:visited {
+        color: <?php echo $headerVisitedLinkColor; ?>;
+    }
+
+    #responsive-menu a:hover,
+    #responsive-menu a:hover,
+    #responsive-menu a:hover {
+        color: <?php echo $headerActiveLinkTextColor; ?>;
+    }
+
+
     .site-title,
-    #responsive-menu .submenu a:link {
+    #responsive-menu .submenu a:link,
+    #offCanvas .menu a:link {
         color: <?php echo $logoLinkColor; ?>
     }
 
     .site-title:not(.button):visited,
-    #responsive-menu .submenu a:visited {
-        color: <?php echo $logoVisitedLinkColor; ?>;
-    }
-
+    #responsive-menu .submenu a:visited,
     header.main a:visited,
-    #responsive-menu a:visited,
     #offCanvas .menu a:visited {
         color: <?php echo $logoVisitedLinkColor; ?>
     }
@@ -121,16 +140,12 @@
         background-color: <?php echo $headerActiveLinkColor; ?>;
     }
 
-    .submenu-toggle:hover {
-        background-color: <?php echo $headerBackgroundColor; ?>;
-    }
-
     .submenu-toggle:after {
         border-color: <?php echo $linkColor; ?> transparent transparent;
     }
 
     #offCanvas .submenu-toggle:after {
-        border-color: <?php echo $headerLinkColor; ?> transparent transparent;
+        border-color: <?php echo $logoLinkColor; ?> transparent transparent;
     }
 
     #responsive-menu .dropdown-toggle + .submenu-toggle:after {
