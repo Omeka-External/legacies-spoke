@@ -73,6 +73,7 @@ $sortHeadings = [
 foreach ($items as $item):
     $heading = $headingTerm ? $item->value($headingTerm, ['default' => $translate('[Untitled]')]) : $item->displayTitle();
     $body = $bodyTerm ? $item->value($bodyTerm) : $item->displayDescription();
+    $tags = $item->value('dcterms:spatial');
 ?>
     <li class="item resource <?php echo ($isGrid) ? '' : 'media-object'; ?>">
         <?php if ($thumbnail = $this->thumbnail($item, 'medium')): ?>
@@ -84,6 +85,9 @@ foreach ($items as $item):
             <h4><?php echo $item->link($heading); ?></h4>
             <?php if ($body): ?>
             <div class="description <?php echo ($bodyTruncate) ? $bodyTruncate : ''; ?>"><?php echo $escape($body); ?></div>
+            <?php endif; ?>
+            <?php if ($tags): ?>
+            <div class="tags secondary label"><?php echo $tags->asHtml(); ?></div>
             <?php endif; ?>
         </div>
     </li>
