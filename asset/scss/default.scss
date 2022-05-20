@@ -511,3 +511,8 @@ footer {
 .faceted-browse-page .facet {
     margin-bottom: 1.5 * $global-margin;
 }
+
+.tags .resource-link {
+    @extend .label;
+    @extend .secondary;
+}
