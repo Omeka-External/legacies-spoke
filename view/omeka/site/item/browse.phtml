@@ -87,7 +87,7 @@ foreach ($items as $item):
             <div class="description <?php echo ($bodyTruncate) ? $bodyTruncate : ''; ?>"><?php echo $escape($body); ?></div>
             <?php endif; ?>
             <?php if ($tags): ?>
-            <div class="tags secondary label"><?php echo $tags->asHtml(); ?></div>
+            <div class="tags"><?php echo $tags->asHtml(['attributes' => ['class' => 'resource-link secondary label']]); ?></div>
             <?php endif; ?>
         </div>
     </li>
