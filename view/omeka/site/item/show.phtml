@@ -2,6 +2,7 @@
 $translate = $this->plugin('translate');
 $escape = $this->plugin('escapeHtml');
 $this->htmlElement('body')->appendAttribute('class', 'item resource show');
+$valueCount = (count($item->values()) < 5) ? 'short' : 'long';
 $embedMedia = $this->siteSetting('item_media_embed', false);
 $itemMedia = $item->media();
 $showLayout = $this->themeSetting('show_layout');
@@ -38,7 +39,6 @@ if ($galleryDisplay) {
 <h3 class="label"><?php echo $translate('Item'); ?></h3>
 </div>
 
-<div class="medium-9 cell">
 <?php if ($galleryDisplay): ?>
     <?php if (count($lightMedia) > 0): ?>
     <div id="itemfiles" class="<?php echo $mediaDisplay; ?>">
@@ -104,6 +104,8 @@ if ($galleryDisplay) {
 
 <?php endif; ?>
 
+<div class="<?php echo ($valueCount == 'short') ? 'medium-12' : 'medium-9'; ?> cell">
+
 <div id="resource-values" class="<?php echo ($showLayout == 'inline') ? 'inline' : 'stack'; ?>">
     <?php $this->trigger('view.show.before'); ?>
     <?php echo $item->displayValues(); ?>
@@ -141,7 +143,7 @@ if ($galleryDisplay) {
     </div>
     
 </div>
-<div class="medium-3 cell">
+<div class="<?php echo ($valueCount == 'short') ? 'medium-12' : 'medium-3'; ?> cell">
     <?php
         $page = $this->params()->fromQuery('page', 1);
         $property = $this->params()->fromQuery('property');
