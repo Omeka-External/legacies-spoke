@@ -1,0 +1,22 @@
+<?php
+$headingTerm = $this->siteSetting('browse_heading_property_term');
+$bodyTerm = $this->siteSetting('browse_body_property_term');
+$tags = $item->value('dcterms:spatial');
+?>
+<ul class="resource-list">
+    <?php foreach ($items as $item): ?>
+    <?php
+    $heading = $headingTerm ? $item->value($headingTerm, ['default' => $this->translate('[Untitled]')]) : $item->displayTitle();
+    $body = $bodyTerm ? $item->value($bodyTerm) : $item->displayDescription();
+    ?>
+    <li class="item resource">
+        <?php echo $item->linkPretty('square', $heading); ?>
+        <?php if ($body): ?>
+        <div class="description"><?php echo $this->escapeHtml($body); ?></div>
+        <?php endif; ?>
+        <?php if ($tags): ?>
+        <div class="tags secondary label"><?php echo $tags->asHtml(); ?></div>
+        <?php endif; ?>
+    </li>
+    <?php endforeach; ?>
+</ul>
