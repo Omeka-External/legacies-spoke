@@ -1,13 +1,13 @@
 <?php
 $headingTerm = $this->siteSetting('browse_heading_property_term');
 $bodyTerm = $this->siteSetting('browse_body_property_term');
-$tags = $item->value('dcterms:spatial');
 ?>
 <ul class="resource-list">
     <?php foreach ($items as $item): ?>
     <?php
     $heading = $headingTerm ? $item->value($headingTerm, ['default' => $this->translate('[Untitled]')]) : $item->displayTitle();
     $body = $bodyTerm ? $item->value($bodyTerm) : $item->displayDescription();
+    $tags = $item->value('dcterms:spatial');
     ?>
     <li class="item resource">
         <?php echo $item->linkPretty('square', $heading); ?>
