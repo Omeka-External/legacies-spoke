@@ -15,7 +15,7 @@ $bodyTerm = $this->siteSetting('browse_body_property_term');
         <div class="description"><?php echo $this->escapeHtml($body); ?></div>
         <?php endif; ?>
         <?php if ($tags): ?>
-        <div class="tags secondary label"><?php echo $tags->asHtml(); ?></div>
+        <div class="tags"><?php echo $tags->asHtml(['class' => 'secondary label']); ?></div>
         <?php endif; ?>
     </li>
     <?php endforeach; ?>
