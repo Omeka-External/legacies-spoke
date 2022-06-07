@@ -249,31 +249,22 @@ footer {
   @include xy-grid-container();
 }
 
+footer {
+    position: relative;
+    color: #fff;
+}
+
 .logos {
-  @include xy-grid();
-  margin-bottom: $global-margin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
-.logos .logo {
-  text-align: center;
-  @include xy-cell-size(3/12);
-  max-height: 6 * $global-padding;
-}
-
-@include breakpoint(medium down) {
-  .logos {
-    height: auto;
-  }
-  
-  .logos .logo {
-    @include xy-cell-size(100%);
-  }
-}
-
-.logos .logo img {
-  max-width: 100%;
-  width: auto;
-  max-height: 100%;
+.footer-logo {
+    width: 25%;
+    padding: 0 $global-padding $global-padding 0;
+    text-align: center;
 }
 
 .collecting-these-times-footer {
@@ -283,7 +274,7 @@ footer {
 }
 
 .footer-links {
-  @include xy-cell-size(7/12);
+  @include xy-cell-size(calc(7/12));
   margin-bottom: $global-margin;
 }
 
