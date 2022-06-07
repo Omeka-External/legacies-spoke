@@ -134,6 +134,20 @@ footer {
     color: #fff;
 }
 
+.logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logo {
+    width: 25%;
+    padding: 0 $global-padding $global-padding 0;
+    text-align: center;
+}
+
+
 // Content
 // =======
 

@@ -76,6 +76,9 @@ endif;
                 <?php echo $this->content; ?>
             </div>
             <footer>
+                <div class="logos">
+                    <?php echo $this->ShowFooterLogos(); ?>
+                </div>
                 <?php if ($footerContent = $this->themeSetting('footer')): ?>
                 <?php echo $footerContent; ?>
                 <?php else: ?>
