@@ -21,6 +21,8 @@
     ($headerBackgroundColor = $this->themeSetting('header_background_color')) || ($headerBackgroundColor = "#ffffff");
     ($footerBackgroundColor = $this->themeSetting('footer_background_color')) || ($footerBackgroundColor = "#ffffff");
     ($navBackgroundColor = $this->themeSetting('nav_background_color')) || ($navBackgroundColor = "#ffffff");
+    ($labelBgColor = $this->themeSetting('label_color')) || ($labelBgColor = "#eee");
+    ($labelTextColor = $this->themeSetting('label_text_color')) || ($labelTextColor = "#000");
 
     ?>
 
@@ -172,4 +174,11 @@
     .dropdown.menu > li.is-dropdown-submenu-parent > a:after {
         border-color: <?php echo $headerLinkColor; ?> transparent transparent;
     }              
+
+    .label, 
+    .filter-value, 
+    .filter-label {
+        background-color: <?php echo $labelBgColor; ?>;
+        color: <?php echo $labelTextColor; ?>
+    }
 </style>
