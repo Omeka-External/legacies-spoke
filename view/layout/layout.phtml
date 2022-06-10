@@ -66,7 +66,7 @@ endif;
         <div id="offCanvas" class="off-canvas position-left" data-off-canvas>
             <?php echo $site->publicNav()->menu()->setPartial('common/foundation-navigation.phtml')->renderPartialWithParams(['layout' => 'vertical']); ?>
             <div class="search">
-                <?php echo $this->partial('common/search-form'); ?>
+                <?php echo $this->partial('common/search-form', ['desktop' => false]); ?>
             </div>
         </div>
         <div class="off-canvas-content" data-off-canvas-content>
@@ -75,7 +75,7 @@ endif;
             <?php echo $this->partial('common/link-back', ['site' => $site, 'siteUrl' => $siteUrl, 'siteTitle' => $siteTitle]); ?>
             <header class="main title-bar top-bar">           
                 <?php echo $this->partial('common/site-title', ['site' => $site, 'siteUrl' => $siteUrl, 'siteTitle' => $siteTitle]); ?>
-                <?php echo $this->partial('common/search-form'); ?>
+                <?php echo $this->partial('common/search-form', ['desktop' => true]); ?>
                 <nav class="menu top-bar-right" id="responsive-menu">
                     <?php echo $site->publicNav()->menu()->setPartial('common/foundation-navigation.phtml')->renderPartialWithParams(['layout' => 'dropdown']); ?>
                 </nav>
