@@ -145,9 +145,11 @@ if ($galleryDisplay) {
 </div>
 <div class="<?php echo ($valueCount == 'short') ? 'medium-12' : 'medium-3'; ?> cell">
     <?php
-        $page = $this->params()->fromQuery('page', 1);
-        $property = $this->params()->fromQuery('property');
-        $subjectValues = $item->displaySubjectValues($page, 25, $property);
+    $subjectValues = $item->displaySubjectValues([
+        'page' => $this->params()->fromQuery('page', 1),
+        'perPage' => 25,
+        'resourceProperty' => $this->params()->fromQuery('resource_property'),
+    ]);
     ?>
     <?php if ($subjectValues): ?>
         <div id="item-linked">
