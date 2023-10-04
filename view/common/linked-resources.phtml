@@ -22,7 +22,7 @@ if ($this->status()->isSiteRequest()) {
 
 <?php foreach ($subjectValues as $term => $values): ?>
     <?php foreach ($values as $value): ?>
-        <?php echo $value->resource()->linkPretty('square', null, null, null, ($filterLocale ? $lang : null)); ?>
+        <?php echo $value['val']->resource()->linkPretty('square', null, null, null, ($filterLocale ? $lang : null)); ?>
     <?php endforeach; ?>
 </tbody>
 </table>
