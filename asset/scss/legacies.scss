@@ -358,22 +358,6 @@ a.button {
         margin-bottom: 2 * $global-margin;
     }
 
-    .full-width .asset {
-        position: relative;
-        width: 100vw;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
-        max-width: none;
-        max-height: 20em;
-        overflow-y: hidden;
-        display: flex;
-        align-content: center;
-        flex-wrap: wrap;
-        margin-bottom: $global-margin;
-    }
-
     .assets.full-width .asset {
         max-width: none;
     }
@@ -442,54 +426,6 @@ a.button {
 
     .resource-link .resource-name {
         max-width: calc(100% - #{4.5 * $global-padding});
-    }
-
-    // Blocks
-    // ======
-
-    .full-width .asset {
-        position: relative;
-        width: 100vw;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
-        max-width: none;
-        max-height: 20em;
-        overflow-y: hidden;
-        display: flex;
-        align-content: center;
-        flex-wrap: wrap;
-        margin-bottom: $global-margin;
-    }
-
-    .full-width .asset img {
-        width: 100vw;
-        position: relative;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
-        max-width: none;
-    }
-
-    .full-width:first-child > .asset {
-        margin-top: -2 * $global-margin;
-    }
-
-    .site-list .site {
-        clear: both;
-        margin: (2 * $global-margin) 0;
-        overflow: hidden;
-    }
-
-    .site-list .site-thumbnail {
-        float: left;
-        margin-right: $global-margin;
-    }
-
-    .site-list .site-link {
-        font-size: 1.5 * $global-font-size;
     }
 
 // Modules
